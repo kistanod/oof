@@ -12,10 +12,12 @@ OOF_hash = "O_O_F"
 OOF_word = "O_O_F"
 OOF_counter = 0
 OOFS = list()
-OOF_len = int(input("How many OOFs do you want? [don't try too many]"))
+OOF_len = int(input("How many OOFs do you want? [don't try too many] "))
 OOF_words = list()
 OOF_hashes = list()
-OOF_size = int(input("how much do you want to [OO]F?"))
+OOF_size = int(input("how much do you want to [OO]F? "))
+
+assert OOF_size >= 2, "OOF must be at least 2"
 OOF_string = ("O" * OOF_size) + "F"
 
 for OOF in range(OOF_len):
@@ -32,7 +34,6 @@ for OOF in range(OOF_len):
     OOF_word = "O_O_F"
     OOF_hash = "O_O_F"
 
-
 for OOF_word, OOF_hash, OOF_counter in zip(OOF_words, OOF_hashes, OOFS):
     OOF_index = OOF_hash.index("OOF")
     OOF_hash = (
@@ -40,7 +41,5 @@ for OOF_word, OOF_hash, OOF_counter in zip(OOF_words, OOF_hashes, OOFS):
     )
     print(f"{OOF_counter}\t{OOF_word}\t{OOF_hash}")
 
-
 OOF_AVG = sum(OOFS) / OOF_len
 print(f"average required to OOF is {OOF_AVG}")
-
